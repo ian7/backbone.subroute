@@ -71,9 +71,10 @@
             // grab the full URL
             var hash = Backbone.history.getHash();
 
+            /* This is just wrong - fires excessively one time per subRouter */
             // Trigger the subroute immediately.  this supports the case where 
             // a user directly navigates to a URL with a subroute on the first page load.
-            Backbone.history.loadUrl( hash );
+            // Backbone.history.loadUrl( hash );
         },
         navigate:function ( route, options ) {
             if ( route.substr( 0, 1 ) != '/' && route.indexOf( this.prefix.substr( 0,
